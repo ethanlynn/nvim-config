@@ -4,6 +4,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
     "lua_ls",
+    "pyright",
     "rust_analyzer",
     "tsserver",
   },
@@ -11,6 +12,7 @@ require("mason-lspconfig").setup({
 
 local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup({})
+lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.tsserver.setup({})
 
@@ -20,6 +22,7 @@ null_ls.setup({
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.black,
   },
 })
 
@@ -35,6 +38,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     "*.scss",
     "*.ts",
     "*.tsx",
+    "*.py",
   },
   callback = function()
     vim.lsp.buf.format({ async = false })
