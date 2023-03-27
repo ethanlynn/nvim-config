@@ -6,4 +6,4 @@ vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.number = true
-vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "yes"
