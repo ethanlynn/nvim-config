@@ -1,15 +1,18 @@
+require("neodev").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "clangd",
     "lua_ls",
     "rust_analyzer",
+    "tsserver",
   },
 })
 
 local lspconfig = require("lspconfig")
 lspconfig.lua_ls.setup({})
 lspconfig.rust_analyzer.setup({})
+lspconfig.tsserver.setup({})
 
 local null_ls = require("null-ls")
 null_ls.setup({
