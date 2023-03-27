@@ -26,21 +26,24 @@ null_ls.setup({
   },
 })
 
--- Enable format on save via LSP.
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = {
     "*.css",
     "*.html",
     "*.js",
     "*.jsx",
-    "*.lua",
-    "*.rs",
-    "*.scss",
     "*.ts",
     "*.tsx",
+    "*.lua",
+    "*.rs",
     "*.py",
   },
   callback = function()
-    vim.lsp.buf.format({ async = false })
+    vim.lsp.buf.format({
+      async = true,
+      filter = function(client)
+        return client.name == "null-ls"
+      end,
+    })
   end,
 })
