@@ -7,3 +7,4 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
+vim.opt.cursorline = true
