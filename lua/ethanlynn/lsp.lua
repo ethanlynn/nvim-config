@@ -19,6 +19,9 @@ lspconfig.tsserver.setup({})
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
+    -- Diagnostics
+    null_ls.builtins.diagnostics.eslint,
+    -- Formatting
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.stylua,
