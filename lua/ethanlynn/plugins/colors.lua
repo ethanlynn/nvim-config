@@ -1,10 +1,11 @@
 return {
   {
-    "sainnhe/everforest",
+    "mcchrish/zenbones.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme everforest]])
+      vim.cmd([[colorscheme vimbones]])
     end,
   },
 }
