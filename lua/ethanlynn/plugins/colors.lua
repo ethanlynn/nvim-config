@@ -7,5 +7,6 @@ return {
       vim.o.background = "dark"
       vim.cmd([[colorscheme everforest]])
     end,
-  }
+  },
+  "projekt0n/github-nvim-theme",
 }

@@ -20,9 +20,32 @@ local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
     -- Diagnostics
-    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.diagnostics.eslint.with({
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "svelte",
+    }),
     -- Formatting
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier.with({
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "css",
+        "scss",
+        "html",
+        "json",
+        "jsonc",
+        "yaml",
+        "markdown",
+        "markdown.mdx",
+        "graphql",
+        "svelte",
+      },
+    }),
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.black,
@@ -33,13 +56,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = {
     "*.css",
     "*.html",
+    "*.md",
+    "*.mdx",
     "*.js",
     "*.jsx",
     "*.ts",
     "*.tsx",
+    "*.cjs",
+    "*.json",
     "*.lua",
     "*.rs",
     "*.py",
+    "*.svelte",
   },
   callback = function()
     vim.lsp.buf.format({

@@ -24,6 +24,7 @@ return {
           "tsx",
           "typescript",
           "vim",
+          "svelte",
         },
         sync_install = false,
         auto_install = false,
