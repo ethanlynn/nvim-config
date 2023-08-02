@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
     "pyright",
     "rust_analyzer",
     "tsserver",
+    "gopls",
   },
 })
 
@@ -15,6 +16,7 @@ lspconfig.lua_ls.setup({})
 lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.tsserver.setup({})
+lspconfig.gopls.setup({})
 
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -76,5 +78,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         return client.name == "null-ls"
       end,
     })
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = {
+    "*.go",
+  },
+  callback = function()
+    vim.lsp.buf.format({ async = true })
   end,
 })

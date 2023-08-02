@@ -25,6 +25,7 @@ return {
           "typescript",
           "vim",
           "svelte",
+          "go",
         },
         sync_install = false,
         auto_install = false,
