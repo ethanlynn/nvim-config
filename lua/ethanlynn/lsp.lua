@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     "tsserver",
     "gopls",
+    "svelte",
   },
 })
 
@@ -17,6 +18,7 @@ lspconfig.pyright.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.gopls.setup({})
+lspconfig.svelte.setup({})
 
 local null_ls = require("null-ls")
 null_ls.setup({
