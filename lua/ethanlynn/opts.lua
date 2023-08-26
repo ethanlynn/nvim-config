@@ -4,6 +4,5 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
-vim.opt.hlsearch = false
 vim.opt.number = false
 vim.opt.signcolumn = "yes"
