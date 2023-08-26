@@ -12,13 +12,14 @@ require("mason-lspconfig").setup({
   },
 })
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({})
-lspconfig.pyright.setup({})
-lspconfig.rust_analyzer.setup({})
-lspconfig.tsserver.setup({})
-lspconfig.gopls.setup({})
-lspconfig.svelte.setup({})
+lspconfig.lua_ls.setup({ capabilities = capabilities })
+lspconfig.pyright.setup({ capabilities = capabilities })
+lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+lspconfig.tsserver.setup({ capabilities = capabilities })
+lspconfig.gopls.setup({ capabilities = capabilities })
+lspconfig.svelte.setup({ capabilities = capabilities })
 
 local null_ls = require("null-ls")
 null_ls.setup({
