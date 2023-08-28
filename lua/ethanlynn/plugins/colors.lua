@@ -1,10 +1,15 @@
 return {
   {
-    "nordtheme/vim",
+    "rose-pine/neovim",
+    name = 'rose-pine',
     lazy = false,
-    priority = 1000,
+    priority = 100,
     config = function()
-      vim.cmd([[colorscheme nord]])
-    end,
+      require("rose-pine").setup({
+        disable_italics = true
+      })
+      vim.cmd([[colorscheme rose-pine]])
+    end
   },
+  "nordtheme/vim"
 }
