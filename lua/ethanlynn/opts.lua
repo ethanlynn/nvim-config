@@ -1,4 +1,5 @@
 -- Default options.
+vim.opt.swapfile = false
 vim.opt.termguicolors = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2

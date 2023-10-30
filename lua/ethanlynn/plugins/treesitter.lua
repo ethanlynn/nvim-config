@@ -26,6 +26,7 @@ return {
           "vim",
           "svelte",
           "go",
+          "zig",
         },
         sync_install = false,
         auto_install = false,

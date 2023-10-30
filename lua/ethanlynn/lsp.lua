@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
     "tsserver",
     "gopls",
     "svelte",
+    "zls",
   },
 })
 
@@ -21,6 +22,7 @@ lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.svelte.setup({ capabilities = capabilities })
+lspconfig.zls.setup({ capabilities = capabilities })
 
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -74,6 +76,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     "*.rs",
     "*.py",
     "*.svelte",
+    "*.zig",
   },
   callback = function()
     vim.lsp.buf.format({
